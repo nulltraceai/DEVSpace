@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevSpace | Login</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <h1>DevSpace</h1>
+        <p>Your personal developer space.</p>
+
+        <form class="login" id="loginForm">
+
+            <table class="container">
+
+                <tr>
+                    <th class="input1">
+                        <button type="button" id="signupTab" class="active">
+                            SIGN UP
+                        </button>
+                    </th>
+
+                    <th class="input1">
+                        <button type="button" id="loginTab">
+                            LOGIN
+                        </button>
+                    </th>
+                </tr>
+
+                <tr class="input" id="nameRow">
+                    <td>
+                        <label for="name">NAME:</label>
+                    </td>
+
+                    <td>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </td>
+                </tr>
+
+                <tr class="input">
+                    <td>
+                        <label for="email">EMAIL:</label>
+                    </td>
+
+                    <td>
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </td>
+                </tr>
+
+                <tr class="input">
+                    <td>
+                        <label for="password">PASSWORD:</label>
+                    </td>
+
+                    <td>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter password"
+                            minlength="8"
+                            required
+                        >
+                    </td>
+                </tr>
+
+                <tr class="btn">
+                    <td colspan="2">
+                        <button type="submit" id="submitBtn">
+                            Create Account
+                        </button>
+                    </td>
+                </tr>
+
+            </table>
+
+            <p id="message" aria-live="polite"></p>
+
+        </form>
+
+    </div>
+
+    <script src="login.js"></script>
+
+</body>
+</html>

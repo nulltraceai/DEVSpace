@@ -1,0 +1,649 @@
+
+:root {
+    --bg: #0b0e1b;
+    --sidebar: #12182b;
+    --card: #171e33;
+    --card-hover: #1d2540;
+    --border: #2a3452;
+    --primary: #927cff;
+    --primary-hover: #a795ff;
+    --secondary: #b8aaff;
+    --text: #f5f5ff;
+    --muted: #a6b0d0;
+    --danger: #c64d68;
+    --success: #42c99a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, sans-serif;
+    background:
+        radial-gradient(ellipse at top right, #171b38 0%, transparent 45%),
+        var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    background: rgba(18, 24, 43, 0.96);
+    padding: 35px 22px;
+    border-right: 1px solid var(--border);
+}
+
+.sidebar h2 {
+    margin-bottom: 45px;
+    font-size: 28px;
+    letter-spacing: -1px;
+    color: var(--text);
+}
+
+.sidebar h2 span {
+    color: var(--primary);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--muted);
+    padding: 14px 16px;
+    border-radius: 12px;
+    transition: all 0.25s ease;
+    font-weight: 500;
+}
+
+nav a:hover,
+nav a.active {
+    background: linear-gradient(110deg, #302c58, #252d4c);
+    color: white;
+    transform: translateX(4px);
+}
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 45px;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    margin-bottom: 38px;
+}
+
+header p {
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+header h1 {
+    font-size: clamp(27px, 3vw, 36px);
+    margin-bottom: 7px;
+    letter-spacing: -1px;
+}
+
+/* =========================================
+   DASHBOARD STATS
+========================================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.card,
+.welcome-card {
+    background: linear-gradient(145deg, #1a223b, #151b2e);
+    padding: 27px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #6859a8;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    color: var(--muted);
+    margin-bottom: 14px;
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+}
+
+/* =========================================
+   WELCOME CARD
+========================================= */
+
+.welcome-card {
+    background: linear-gradient(120deg, #28254f, #352c64);
+    padding: 38px;
+    border-color: #484078;
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+}
+
+.welcome-card h2 {
+    font-size: 25px;
+}
+
+.welcome-card p {
+    margin-top: 15px;
+    color: #d0c9f4;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+    margin-top: 25px;
+    padding: 13px 22px;
+    background: linear-gradient(120deg, #8873f7, #a08aff);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    background: linear-gradient(120deg, #9b89ff, #b19eff);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(139, 124, 255, 0.2);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* =========================================
+   DEVSPACE ANALYTICS
+========================================= */
+
+.analytics-section {
+    margin-top: 42px;
+    margin-bottom: 40px;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.analytics-card {
+    min-width: 0;
+    padding: 26px;
+    background: linear-gradient(145deg, #171e30, #141a2a);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    transition: border-color 0.3s ease;
+}
+
+.analytics-card:hover {
+    border-color: #6658a4;
+}
+
+.analytics-card h3 {
+    margin-bottom: 8px;
+    font-size: 19px;
+}
+
+.analytics-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 280px;
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.section-heading {
+    margin-bottom: 24px;
+}
+
+.section-heading h2 {
+    margin-bottom: 8px;
+    font-size: 25px;
+    letter-spacing: -0.5px;
+}
+
+.section-heading p {
+    color: var(--muted);
+}
+
+/* =========================================
+   LEARNING TRACKER
+========================================= */
+
+.learning-section {
+    margin-top: 38px;
+}
+
+.skill-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.skill-form input,
+.skill-form select {
+    flex: 1;
+    min-width: 0;
+    padding: 15px;
+    background: #171e33;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    color: white;
+    outline: none;
+    transition: all 0.25s ease;
+    font-size: 14px;
+}
+
+.skill-form input:focus,
+.skill-form select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(146, 124, 255, 0.12);
+}
+
+.skill-form input::placeholder {
+    color: #7e89a8;
+}
+
+.skill-form button {
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+.skill-list {
+    display: grid;
+    gap: 18px;
+}
+
+.skill-item {
+    background: linear-gradient(145deg, #1a223a, #171e32);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 17px;
+    animation: slideIn 0.4s ease;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.skill-item:hover {
+    border-color: #62569c;
+    transform: translateY(-3px);
+}
+
+.skill-item button {
+    margin-right: 10px;
+    padding: 10px 17px;
+}
+
+.skill-item button:last-child {
+    background: var(--danger);
+}
+
+.skill-item button:last-child:hover {
+    background: #df5d78;
+}
+
+.skill-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.skill-percent {
+    color: var(--secondary);
+    font-weight: 700;
+}
+
+.progress-track {
+    height: 11px;
+    background: #303953;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #7865ee, #b09aff);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+.skill-controls {
+    margin-top: 17px;
+}
+
+.skill-controls input {
+    width: 100%;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.skill-status {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+/* =========================================
+   PROJECTS VAULT
+========================================= */
+
+.projects-section {
+    margin-top: 42px;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-card {
+    min-width: 0;
+    background: linear-gradient(145deg, blue, darkblue);
+    border: 1px solid var(--border);
+    padding: 26px;
+    border-radius: 17px;
+    animation: slideIn 0.4s ease;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #6b5caf;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.project-card p {
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.6;
+}
+
+.project-tech {
+    color: #d9bd64;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.project-status {
+    padding: 9px 12px;
+    border-radius: 9px;
+    background: #282f4d;
+    color: white;
+    border: 1px solid #444d70;
+    outline: none;
+    cursor: pointer;
+}
+
+.project-link {
+    color: var(--secondary);
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 12px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.project-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.project-actions button {
+    margin: 0;
+}
+
+.project-actions button:last-child {
+    background: var(--danger);
+}
+
+.project-actions button:last-child:hover {
+    background: #df5d78;
+}
+
+/* =========================================
+   RESOURCE LIBRARY
+========================================= */
+
+.resources-section {
+    margin-top: 42px;
+}
+
+.resource-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.resource-card {
+    min-width: 0;
+    background: linear-gradient(145deg, #1a223a, #171e32);
+    border: 1px solid var(--border);
+    padding: 26px;
+    border-radius: 17px;
+    transition: all 0.3s ease;
+    animation: slideIn 0.4s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    border-color: #6b5caf;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.resource-card h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.resource-category {
+    display: inline-block;
+    color: #c5b6ff;
+    background: #302c54;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 17px;
+}
+
+.resource-card a {
+    display: block;
+    width: fit-content;
+    color: var(--secondary);
+    text-decoration: none;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.resource-card a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.resource-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.resource-actions button {
+    margin: 0;
+    padding: 10px 18px;
+}
+
+.resource-actions button:last-child {
+    background: var(--danger);
+}
+
+.resource-actions button:last-child:hover {
+    background: #df5d78;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#message {
+    color: white;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1100px) {
+    .main-content {
+        padding: 30px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 750px) {
+    .app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 22px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 20px;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 10px 12px;
+    }
+
+    .main-content {
+        padding: 22px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-form {
+        flex-direction: column;
+    }
+
+    .skill-form button {
+        width: 100%;
+    }
+
+    .project-list,
+    .resource-list {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-container {
+        height: 250px;
+    }
+
+    .welcome-card {
+        padding: 25px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

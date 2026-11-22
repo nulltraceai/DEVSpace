@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevSpace | Developer Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <img src >
+            <h2>DevSpace</h2>
+
+
+            <nav>
+                <a href="#dashboard" class="active">Dashboard</a>
+                <a href="#learning">My Learning</a>
+                <a href="#projects">Projects</a>
+                <a href="#resources">Resources</a>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content" id="dashboard">
+
+            <!-- HEADER -->
+            <header>
+                <p>YOUR PERSONAL DEVELOPER SPACE</p>
+          <h1>Welcome to DevSpace 👋</h1>
+          <p>Build skills. Create projects. Keep growing.</p>
+            </header>
+            <section class="welcome-card">
+               <h2>Your developer journey starts here.</h2>
+               <p>Build your skills, track your progress and create something amazing.</p>
+
+                <button id="startBtn">Start Learning →</button>
+            </section>
+
+            <!-- DASHBOARD STATISTICS -->
+            <section class="stats">
+
+                <div class="card">
+                    <h3>Learning</h3>
+                    <p id="totalSkills">00 Topics</p>
+                </div>
+
+                <div class="card">
+                    <h3>Projects</h3>
+                    <p id="totalProjects">00 Projects</p>
+                </div>
+
+                <div class="card">
+                    <h3>Overall Progress</h3>
+                    <p id="overallProgress">0%</p>
+                </div>
+
+            </section>
+
+<!-- ANALYTICS DASHBOARD -->
+    <section class="analytics-section">
+
+      <div class="section-heading">
+        <h2>My Learning Analytics</h2>
+        <p>Visualise your skills and project progress.</p>
+      </div>
+
+      <div class="analytics-grid">
+
+        <div class="analytics-card">
+            <h3>Skill Progress</h3>
+            <p>Track your learning progress by skill.</p>
+            <div class="chart-container">
+                <canvas id="skillChart"></canvas>
+            </div>
+        </div>
+
+        <div class="analytics-card">
+            <h3>Project Status</h3>
+            <p>See the status of all your projects.</p>
+            <div class="chart-container">
+                <canvas id="projectChart"></canvas>
+            </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+            <!-- LEARNING TRACKER -->
+            <section class="learning-section" id="learning">
+
+                <div class="section-heading">
+                    <h2>My Learning Journey</h2>
+                    <p>Track your skills and monitor your progress.</p>
+                </div>
+
+                <form id="skillForm" class="skill-form">
+
+                    <input
+                        type="text"
+                        id="skillInput"
+                        placeholder="Enter a skill (e.g. JavaScript)"
+                        required
+                    >
+
+                    <button type="submit">+ Add Skill</button>
+
+                </form>
+
+                <div id="skillList" class="skill-list"></div>
+
+            </section>
+
+            <!-- PROJECTS VAULT -->
+            <section class="projects-section" id="projects">
+
+                <div class="section-heading">
+                    <h2>My Projects</h2>
+                    <p>Build, organise and showcase your work.</p>
+                </div>
+
+                <form id="projectForm" class="skill-form">
+
+                    <input
+                        type="text"
+                        id="projectName"
+                        placeholder="Project name"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        id="projectTech"
+                        placeholder="Technologies (e.g. HTML, CSS, JS)"
+                        required
+                    >
+
+                    <input
+                        type="text"
+                        id="projectDescription"
+                        placeholder="Short project description"
+                        required
+                    >
+
+                    <input
+                        type="url"
+                        id="projectLink"
+                        placeholder="GitHub repository URL (optional)"
+                    >
+
+                    <button type="submit">+ Add Project</button>
+
+                </form>
+
+                <div id="projectList" class="project-list"></div>
+
+            </section>
+
+            <!-- RESOURCE LIBRARY -->
+            <section class="resources-section" id="resources">
+
+                <div class="section-heading">
+                    <h2>My Resource Library</h2>
+                    <p>Save useful tutorials, documentation and coding links.</p>
+                </div>
+
+                <form id="resourceForm" class="skill-form">
+
+                    <input
+                        type="text"
+                        id="resourceTitle"
+                        placeholder="Resource title"
+                        required
+                    >
+
+                    <select id="resourceCategory" required>
+                        <option value="">Choose category</option>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="C/C++">C/C++</option>
+                        <option value="DSA">DSA</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <input
+                        type="url"
+                        id="resourceUrl"
+                        placeholder="Paste resource URL"
+                        required
+                    >
+
+                    <button type="submit">+ Save Resource</button>
+
+                </form>
+
+                <div id="resourceList" class="resource-list"></div>
+
+            </section>
+
+            
+
+        </main>
+
+       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+       <script src="script.js"></script>
+
+    </div>
+</body>
+</html>
